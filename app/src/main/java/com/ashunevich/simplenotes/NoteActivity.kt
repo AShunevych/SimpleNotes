@@ -11,6 +11,7 @@ import com.ashunevich.simplenotes.MainActivity.Companion.CREATE_NOTE_CODE
 import com.ashunevich.simplenotes.MainActivity.Companion.ITEM_ID
 import com.ashunevich.simplenotes.MainActivity.Companion.ITEM_TAG
 import com.ashunevich.simplenotes.MainActivity.Companion.ITEM_TEXT
+import com.ashunevich.simplenotes.MainActivity.Companion.UPDATE_NOTE_CODE
 import com.ashunevich.simplenotes.databinding.NoteActivityBinding
 
 class NoteActivity:AppCompatActivity() {
@@ -49,7 +50,7 @@ class NoteActivity:AppCompatActivity() {
             replyIntent.putExtra(RESULT_ACTIVITY,intentCode)
             replyIntent.putExtra(MAIN_TEXT,getText(binding?.noteText))
             replyIntent.putExtra(TAG_TEXT,getText(binding?.tagText))
-            if(intentCode == CREATE_NOTE_CODE) {
+            if(intentCode == UPDATE_NOTE_CODE) {
                 replyIntent.putExtra(ID_TXT,id)
             }
             setResult(Activity.RESULT_OK,replyIntent)
