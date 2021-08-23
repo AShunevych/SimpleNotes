@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                 val tagText:String? = it.data?.getStringExtra(TAG_TEXT)
 
                 if(resultCode == CREATE_NOTE_CODE){
-                    val note = NoteEntity(tagText, mainText, getDate())
+                    val note = NoteEntity(tagText, mainText, getDate(), adapter?.itemCount?.plus(1))
                     model.insert(note)
                 }
                 else{

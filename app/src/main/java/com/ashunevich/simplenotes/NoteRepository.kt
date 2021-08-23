@@ -4,19 +4,20 @@ import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 
 @WorkerThread
+@Suppress("RedundantSuspendModifier")
 class NoteRepository(private val noteDao: NoteDao) {
 
     val allNotes: LiveData<List<NoteEntity>> = noteDao.getAll()
 
-    fun insert(noteEntity: NoteEntity) {
+    suspend fun insert(noteEntity: NoteEntity) {
         noteDao.insert(noteEntity)
     }
 
-    fun delete(noteEntity: NoteEntity){
+    suspend fun delete(noteEntity: NoteEntity){
         noteDao.delete(noteEntity)
     }
 
-    fun update(noteEntity: NoteEntity){
+    suspend fun update(noteEntity: NoteEntity){
         noteDao.update(noteEntity)
     }
 
