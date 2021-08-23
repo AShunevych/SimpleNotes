@@ -113,7 +113,9 @@ class MainActivity : AppCompatActivity() {
         adapter = RecyclerViewAdapter()
         binding?.recyclerView?.layoutManager = LinearLayoutManager(this)
         binding?.recyclerView?.adapter = adapter
+        Utils.idlingResource.increment()
         model.allNotes.observe(this, { notes -> notes?.let { adapter!!.swap(it as MutableList<NoteEntity>) } })
+        Utils.idlingResource.decrement()
 
     }
 
