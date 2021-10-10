@@ -37,7 +37,4 @@ open class RobotBase {
             .perform(actionOnItem<RecyclerView.ViewHolder>
                 (ViewMatchers.hasDescendant(ViewMatchers.withText(text)), swipeLeft()))
 
-    fun verifyImageAt(pos:Int){
-        assertDrawableDisplayedAtPosition(R.id.recyclerView, pos, R.id.image, R.drawable.ic_program_class_skipped)
-    }
 }

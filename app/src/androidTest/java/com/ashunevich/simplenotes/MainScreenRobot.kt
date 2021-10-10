@@ -11,7 +11,7 @@ class MainScreenRobot : RobotBase() {
     private val createNewNote: Matcher<View> = withId(R.id.addNewNote)
     private val recyclerView: Matcher<View> = withId(R.id.recyclerView)
 
-    fun tapOnButton() = tapBy(createNewNote)
+    fun createItem() = tapBy(createNewNote)
 
     fun updateItem(itemName: String) = tapRecyclerItem(itemName,recyclerView)
 

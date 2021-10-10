@@ -23,9 +23,8 @@ class MainActivityTest {
 
     @Test
     fun createNewNoteTest(){
-
         mainScreenRobot{
-            tapOnButton()
+            createItem()
         }
         noteRobot {
             setTag("tag")
@@ -46,15 +45,12 @@ class MainActivityTest {
         }
     }
 
-
     @Test
     fun deleteNote(){
         mainScreenRobot{
             removeItem("new Tag")
         }
-
     }
-
 
     @After
     fun tearDown(){
