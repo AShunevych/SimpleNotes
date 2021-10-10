@@ -8,6 +8,7 @@ import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.swipeLeft
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItem
 import androidx.test.espresso.matcher.ViewMatchers
+import com.adevinta.android.barista.assertion.BaristaListAssertions.assertDrawableDisplayedAtPosition
 import org.hamcrest.Matcher
 
 open class RobotBase {
@@ -36,5 +37,7 @@ open class RobotBase {
             .perform(actionOnItem<RecyclerView.ViewHolder>
                 (ViewMatchers.hasDescendant(ViewMatchers.withText(text)), swipeLeft()))
 
-
+    fun verifyImageAt(pos:Int){
+        assertDrawableDisplayedAtPosition(R.id.recyclerView, pos, R.id.image, R.drawable.ic_program_class_skipped)
+    }
 }
